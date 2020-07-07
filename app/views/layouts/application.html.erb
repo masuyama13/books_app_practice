@@ -12,7 +12,7 @@
   <body>
   <p>
     <% if user_signed_in? %>
-      <%= t("Logged in as") %> <strong><%= current_user.email %></strong>.
+      <%= t("Logged in as") %> <strong><%= link_to current_user.email, user_path(current_user) %></strong>.
       <%= link_to t("Edit profile"), edit_user_registration_path %> |
       <%= link_to t("Logout"), destroy_user_session_path, method: :delete %>
     <% else %>
