@@ -13,6 +13,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
     <%= f.label :zip %><br />
     <%= f.text_field :zip, autocomplete: "zip" %>
   </div>
