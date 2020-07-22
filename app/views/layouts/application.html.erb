@@ -12,11 +12,12 @@
   <body>
   <p>
     <% if user_signed_in? %>
-      <%= t("Logged in as") %> <strong><%= link_to current_user.email, user_path(current_user) %></strong>.
+      <%= t("Logged in as") %> <strong><%= link_to current_user.name, user_path(current_user) %></strong>
       <%= link_to t("Edit profile"), edit_user_registration_path %> |
       <%= link_to t("Logout"), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t("Sign up"), new_user_registration_path  %> |
+      <%= link_to t("Sign in with GitHub"), user_github_omniauth_authorize_path %> |
       <%= link_to t("Login"), new_user_session_path %>
     <% end %>
   </p>

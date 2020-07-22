@@ -30,6 +30,7 @@ ja:
   Books: 本
   New Book: 新規作成
   Editing Book: 編集
+  Sign in with GitHub: "GitHubでログイン"
   views:
     pagination:
       first: "&laquo; 最初"
