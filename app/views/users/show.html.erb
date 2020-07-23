@@ -23,4 +23,9 @@
   <%= @user.profile %>
 </p>
 
+<p>
+  <strong><%= User.human_attribute_name(:image) %>:</strong><br>
+  <%= image_tag @user.image if @user.image.attached? %>
+</p>
+
 <%= link_to t("link.Back"), books_path %>
