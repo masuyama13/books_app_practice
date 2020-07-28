@@ -5,6 +5,7 @@ class Book < ApplicationRecord
   belongs_to :user
 
   def created_by?(user)
-    user_id == user.id ? true : false
+    return false if user == nil
+    user_id == user.id
   end
 end
