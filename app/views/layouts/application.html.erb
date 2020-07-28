@@ -12,6 +12,8 @@
   <body>
   <p>
     <% if user_signed_in? %>
+      <%= link_to t("Top"), root_path %>
+      <%= link_to t("My Timeline"), timeline_path %> |
       <%= t("Logged in as") %> <strong><%= link_to current_user.name, user_path(current_user) %></strong>
       <%= link_to t("Edit profile"), edit_user_registration_path %> |
       <%= link_to t("Logout"), destroy_user_session_path, method: :delete %>
