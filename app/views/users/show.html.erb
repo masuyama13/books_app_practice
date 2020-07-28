@@ -1,11 +1,19 @@
-<p>
-  <strong><%= User.human_attribute_name(:email) %>:</strong>
-  <%= @user.email %>
-</p>
+<% unless current_user == @user %>
+  <% if current_user.following?(@user) %>
+    <%= render "unfollow" %>
+  <% else %>
+    <%= render "follow" %>
+  <% end %>
+<% end %>
 
 <p>
   <strong><%= User.human_attribute_name(:name) %>:</strong>
   <%= @user.name %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @user.email %>
 </p>
 
 <p>
