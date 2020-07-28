@@ -16,6 +16,7 @@ ja:
         author: 著者
         picture: 画像
       user:
+        name: ユーザー名
         image: 画像
   link:
     New Book: 新規作成
@@ -33,6 +34,10 @@ ja:
   New Book: 新規作成
   Editing Book: 編集
   Sign in with GitHub: "GitHubでログイン"
+  Top: トップ
+  My Timeline: マイタイムライン
+  Follow: フォローする
+  Unfollow: フォロー解除
   views:
     pagination:
       first: "&laquo; 最初"
