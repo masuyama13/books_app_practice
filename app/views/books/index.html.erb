@@ -21,7 +21,7 @@
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
         <td><%= link_to t("link.Show"), book %></td>
-        <% if book.created_by?(current_user) %>
+        <% if book.user == current_user %>
           <td><%= link_to t("link.Edit"), edit_book_path(book) %></td>
           <td><%= link_to t("link.Destroy"), book, method: :delete, data: { confirm: t("alert.sure") } %></td>
         <% end %>
