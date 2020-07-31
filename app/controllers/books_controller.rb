@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:edit, :update, :destroy]
 
   # GET /books
   def index
@@ -10,6 +10,7 @@ class BooksController < ApplicationController
 
   # GET /books/1
   def show
+    @book = Book.find(params[:id])
   end
 
   # GET /books/new
@@ -24,6 +25,7 @@ class BooksController < ApplicationController
   # POST /books
   def create
     @book = Book.new(book_params)
+    @book.user_id = current_user.id
 
     if @book.save
       redirect_to @book, notice: t("flash.create")
@@ -50,7 +52,7 @@ class BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params[:id])
+      @book = current_user.books.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

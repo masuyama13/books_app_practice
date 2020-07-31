@@ -1,4 +1,4 @@
-<h1><%= t("Books") %></h1>
+<h1><%= t("My Timeline") %></h1>
 
 <table>
   <thead>
@@ -21,10 +21,6 @@
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
         <td><%= link_to t("link.Show"), book %></td>
-        <% if book.user == current_user %>
-          <td><%= link_to t("link.Edit"), edit_book_path(book) %></td>
-          <td><%= link_to t("link.Destroy"), book, method: :delete, data: { confirm: t("alert.sure") } %></td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>

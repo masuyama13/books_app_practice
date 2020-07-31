@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong><%= User.human_attribute_name(:name) %>:</strong>
+  <%= link_to @book.user.name, user_path(@book.user) %>
+</p>
+
+<p>
   <strong><%= Book.human_attribute_name(:title) %>:</strong>
   <%= @book.title %>
 </p>
@@ -20,5 +25,7 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= link_to t("link.Edit"), edit_book_path(@book) %> |
+<% if @book.user == current_user %>
+  <%= link_to t("link.Edit"), edit_book_path(@book) %> |
+<% end %>
 <%= link_to t("link.Back"), books_path %>
