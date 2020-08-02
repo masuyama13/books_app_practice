@@ -6,8 +6,12 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  resources :books
-  resources :reports
+  resources :books do
+    resources :comments, module: :books
+  end
+  resources :reports do
+    resources :comments, module: :reports
+  end
   resources :users do
     member do
       get :following, :followers
