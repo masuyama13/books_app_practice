@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reports</h1>
+<h1><%= t("Reports") %></h1>
 
 <table>
   <thead>
     <tr>
       <th><%= User.human_attribute_name(:name) %></th>
-      <th><%= Book.human_attribute_name(:title) %></th>
-      <th><%= Book.human_attribute_name(:body) %></th>
+      <th><%= Report.human_attribute_name(:title) %></th>
+      <th><%= Report.human_attribute_name(:body) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<%= link_to t("link.New Report"), new_report_path %>
