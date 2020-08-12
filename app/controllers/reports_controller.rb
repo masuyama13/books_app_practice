@@ -44,8 +44,11 @@ class ReportsController < ApplicationController
 
   # DELETE /reports/1
   def destroy
-    @report.destroy
-    redirect_to reports_url, notice: t("flash.destroy", model: @report.model_name.human)
+    if @report.destroy
+      redirect_to reports_url, notice: t("flash.destroy", model: @report.model_name.human)
+    else
+      render :edit
+    end
   end
 
   private
