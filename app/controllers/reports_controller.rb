@@ -26,7 +26,7 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.user_id = current_user.id
     if @report.save
-      redirect_to @report, notice: "Report was successfully created."
+      redirect_to @report, notice: t("flash.create", model: @report.model_name.human)
     else
       render :new
     end
@@ -35,7 +35,7 @@ class ReportsController < ApplicationController
   # PATCH/PUT /reports/1
   def update
     if @report.update(report_params)
-      redirect_to @report, notice: "Report was successfully updated."
+      redirect_to @report, notice: t("flash.update", model: @report.model_name.human)
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class ReportsController < ApplicationController
   # DELETE /reports/1
   def destroy
     @report.destroy
-    redirect_to reports_url, notice: "Report was successfully destroyed."
+    redirect_to reports_url, notice: t("flash.destroy", model: @report.model_name.human)
   end
 
   private

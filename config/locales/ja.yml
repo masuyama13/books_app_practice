@@ -30,15 +30,16 @@ ja:
     Edit: 編集
     Destroy: 削除
   flash:
-    create: "本が保存されました"
-    update: "本が更新されました"
-    destroy: "本が削除されました"
+    create: "%{model}が保存されました"
+    update: "%{model}が更新されました"
+    destroy: "%{model}が削除されました"
   alert:
     sure: "本当によろしいですか？"
   Books: 本
   Reports: 日報
   Comments: コメント
   New Book: 新規作成
+  New Report: 新規作成
   Editing Book: 編集
   Editing Report: 編集
   Add a comment: コメントを追加
