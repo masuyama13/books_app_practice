@@ -5,11 +5,12 @@ class ReportsController < ApplicationController
 
   # GET /reports
   def index
-    @reports = Report.all
+    @reports = Report.page(params[:page])
   end
 
   # GET /reports/1
   def show
+    @report = Report.find(params[:id])
   end
 
   # GET /reports/new
