@@ -5,7 +5,7 @@ require "application_system_test_case"
 class UsersTest < ApplicationSystemTestCase
   include Devise::Test::IntegrationHelpers
 
-  test "新しいユーザーを登録" do
+  test "新しいユーザーを登録できる" do
     visit new_user_registration_path
     within "form[name=user_registration]" do
       fill_in "Eメール", with: "xxx@example.com"
@@ -20,13 +20,13 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "アカウント登録が完了しました。"
   end
 
-  test "ユーザープロフィールを表示" do
+  test "ユーザープロフィールを表示できる" do
     sign_in users(:one)
     visit user_path(users(:two))
     assert_text users(:two).name
   end
 
-  test "ユーザー情報を更新" do
+  test "ユーザー情報を更新できる" do
     sign_in users(:one)
     visit edit_user_registration_path(users(:one))
     within "form[name=user_edit]" do
@@ -36,7 +36,7 @@ class UsersTest < ApplicationSystemTestCase
     assert_text "アカウント情報を変更しました"
   end
 
-  test "ユーザーを削除" do
+  test "ユーザーを削除できる" do
     sign_in users(:one)
     visit edit_user_registration_path(users(:one))
     accept_confirm do

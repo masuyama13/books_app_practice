@@ -5,7 +5,7 @@ require "application_system_test_case"
 class ReportsTest < ApplicationSystemTestCase
   include Devise::Test::IntegrationHelpers
 
-  test "新しい日報を作成" do
+  test "新しい日報を作成できる" do
     sign_in users(:one)
     visit new_report_path
     within "form[name=report]" do
@@ -16,12 +16,12 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text "日報が保存されました"
   end
 
-  test "日報の一覧を表示" do
+  test "日報の一覧を表示できる" do
     visit reports_path
     assert_text reports(:one).title
   end
 
-  test "日報の情報を更新" do
+  test "日報の情報を更新できる" do
     sign_in users(:one)
     visit edit_report_path(reports(:one))
     within "form[name=report]" do
@@ -32,7 +32,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text "日報が更新されました"
   end
 
-  test "日報を削除" do
+  test "日報を削除できる" do
     sign_in users(:one)
     visit reports_path
     accept_confirm do
