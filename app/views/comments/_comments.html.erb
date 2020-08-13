@@ -1,0 +1,6 @@
+<h3><%= t("Comments") %></h3>
+<% commentable.comments.each do |comment| %>
+  <p>
+    <strong><%= comment.user.name %></strong> : <%= comment.body %>
+  </p>
+<% end %>

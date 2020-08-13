@@ -9,32 +9,42 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       book: 本
+      report: 日報
+      comment: コメント
     attributes:
       book:
         title: タイトル
         memo: メモ
         author: 著者
         picture: 画像
+      report:
+        title: タイトル
+        body: 本文
       user:
         name: ユーザー名
         image: 画像
   link:
     New Book: 新規作成
+    New Report: 新規作成
     Back: 戻る
     Show: 詳細
     Edit: 編集
     Destroy: 削除
   flash:
-    create: "本が保存されました"
-    update: "本が更新されました"
-    destroy: "本が削除されました"
+    create: "%{model}が保存されました"
+    update: "%{model}が更新されました"
+    destroy: "%{model}が削除されました"
   alert:
     sure: "本当によろしいですか？"
   Books: 本
+  Reports: 日報
+  Comments: コメント
   New Book: 新規作成
+  New Report: 新規作成
   Editing Book: 編集
+  Editing Report: 編集
+  Add a comment: コメントを追加
   Sign in with GitHub: "GitHubでログイン"
-  Top: トップ
   My Timeline: マイタイムライン
   Follow: フォローする
   Unfollow: フォロー解除

@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     @book.user_id = current_user.id
 
     if @book.save
-      redirect_to @book, notice: t("flash.create")
+      redirect_to @book, notice: t("flash.create", model: @book.model_name.human)
     else
       render :new
     end
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   def update
     if @book.update(book_params)
-      redirect_to @book, notice: t("flash.update")
+      redirect_to @book, notice: t("flash.update", model: @book.model_name.human)
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class BooksController < ApplicationController
   # DELETE /books/1
   def destroy
     @book.destroy
-    redirect_to books_url, notice: t("flash.destroy")
+    redirect_to books_url, notice: t("flash.destroy", model: @book.model_name.human)
   end
 
   private
