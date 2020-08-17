@@ -3,8 +3,6 @@
 require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
-  include Devise::Test::IntegrationHelpers
-
   test "新しいユーザーを登録できる" do
     visit new_user_registration_path
     within "form[name=user_registration]" do

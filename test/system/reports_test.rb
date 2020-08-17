@@ -3,8 +3,6 @@
 require "application_system_test_case"
 
 class ReportsTest < ApplicationSystemTestCase
-  include Devise::Test::IntegrationHelpers
-
   test "新しい日報を作成できる" do
     sign_in users(:one)
     visit new_report_path

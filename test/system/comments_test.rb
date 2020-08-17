@@ -1,8 +1,6 @@
 require "application_system_test_case"
 
 class CommentsTest < ApplicationSystemTestCase
-  include Devise::Test::IntegrationHelpers
-
   test "本にコメントを投稿できる" do
     sign_in users(:one)
     visit book_path(books(:one))

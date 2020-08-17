@@ -3,8 +3,6 @@
 require "application_system_test_case"
 
 class BooksTest < ApplicationSystemTestCase
-  include Devise::Test::IntegrationHelpers
-
   test "新しい本を作成できる" do
     sign_in users(:one)
     visit new_book_path
